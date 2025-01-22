@@ -1,0 +1,11 @@
+langchain
+unstructured
+pypdf
+python-pptx
+python-docx
+html2text
+streamlit
+langchain_community
+langchain_google_genai
+nltk
+faiss-cpu
