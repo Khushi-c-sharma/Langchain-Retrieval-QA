@@ -14,7 +14,6 @@ from langchain_community.document_loaders import (
     PyPDFLoader, TextLoader, UnstructuredFileLoader,
     UnstructuredHTMLLoader, UnstructuredPowerPointLoader
 )
-from langchain_unstructured import UnstructuredLoader
 import nltk
 nltk.download('punkt')
 nltk.download('punkt_tab')
