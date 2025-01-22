@@ -1,6 +1,7 @@
 import os
 import time
 import tempfile
+import unstructured
 import streamlit as st
 from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -13,6 +14,12 @@ from langchain_community.document_loaders import (
     PyPDFLoader, TextLoader, UnstructuredFileLoader,
     UnstructuredHTMLLoader, UnstructuredPowerPointLoader
 )
+from langchain_unstructured import UnstructuredLoader
+import nltk
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('averaged_perceptron_tagger_eng')
 
 # Load environment variables
 from dotenv import load_dotenv
@@ -27,15 +34,6 @@ if "faiss_index" not in st.session_state:
         task_type="retrieval_document"
     )
     st.session_state.faiss_index = None  # Initialize FAISS index to None
-
-# Modular functions
-
-import os
-import tempfile
-from langchain_community.document_loaders import (
-    PyPDFLoader, TextLoader, UnstructuredFileLoader,
-    UnstructuredHTMLLoader, UnstructuredPowerPointLoader
-)
 
 def load_documents(uploaded_files):
     documents = []

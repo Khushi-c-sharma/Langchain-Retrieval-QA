@@ -9,3 +9,6 @@ langchain_community
 langchain_google_genai
 nltk
 faiss-cpu
+unstructured[docx]
+networkx
+python-dotenv
