@@ -12,3 +12,4 @@ faiss-cpu
 unstructured[docx]
 networkx
 python-dotenv
+gunicorn
