@@ -81,7 +81,7 @@ def create_faiss_vectorstore(documents, embeddings):
 def setup_retrieval_qa(faiss_index):
     llm = ChatGoogleGenerativeAI(
         api_key=GOOGLE_API_KEY,
-        model="models/gemini-1.5-pro-latest",
+        model="models/gemini-2.5-flash-lite",
         temperature=0.7,
         max_output_tokens=512
     )
